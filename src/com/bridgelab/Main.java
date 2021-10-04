@@ -14,7 +14,7 @@ public class Main {
 		 */
 		while (status) {
 			System.out.println("Enter your option : \n Press 1 to Add new person"
-					+ " \n Press 2 to Edit details \n Press 3 to Display details \n Press 9 to Quit");
+					+ " \n Press 2 to Edit details \n Press 3 to Display details  \n Press 4 to Delete details  \n Press 9 to Quit");
 			int choice = scan.nextInt();
 			switch (choice) {
 			case 1:
@@ -28,6 +28,11 @@ public class Main {
 			case 3:
 				addressBookSystem.display();
 				break;
+			case 4:
+				System.out.println("Enter your firstname to delete your details");
+				String firstname = scan.next();
+				addressBookSystem.delete(firstname);
+				break;
 			default:
 				status = false;
 			}
@@ -38,5 +43,6 @@ public class Main {
 	public static void main(String args[]) {
 		Main main = new Main();
 		main.options();
+
 	}
 }
